@@ -1,5 +1,8 @@
 #  AI Code Review Intelligence System
 
+
+#LIVE DEMO -https://ai-code-review-intelligence-hqkxc5n4gjutjgapptjbvqd.streamlit.app/
+
 An AI system that predicts bug-introducing PRs and recommends 
 reviewers using CodeBERT, XGBoost, and graph-based ML on real GitHub data.
 
@@ -21,3 +24,9 @@ Python · CodeBERT · XGBoost · NetworkX · Streamlit · GitHub API · SHAP · 
 ## Run locally
 pip install -r requirements.txt
 streamlit run app/dashboard.py
+
+## Future Work
+GitHub Action integration — auto-analyse PRs on any repo via webhook
+Fine-tune CodeBERT on domain-specific codebases
+Add multi-language support beyond Python/JavaScript
+Real-time PR monitoring via GitHub webhooks
