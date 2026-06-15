@@ -1,0 +1,10 @@
+Best Model: SVM
+
+              precision    recall  f1-score   support
+
+    Clean PR       0.41      0.47      0.44        15
+  Bug Fix PR       0.95      0.94      0.95       165
+
+    accuracy                           0.90       180
+   macro avg       0.68      0.70      0.69       180
+weighted avg       0.91      0.90      0.90       180
