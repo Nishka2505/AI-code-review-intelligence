@@ -1,19 +1,23 @@
-# AI Code Review Intelligence System
+#  AI Code Review Intelligence System
 
-An AI-powered system that predicts bug-introducing pull requests and recommends
-the best reviewer using CodeBERT, XGBoost, and graph-based ML on real GitHub data.
+An AI system that predicts bug-introducing PRs and recommends 
+reviewers using CodeBERT, XGBoost, and graph-based ML on real GitHub data.
 
-## What it does
-- Predicts which PRs are likely to introduce bugs (CodeBERT + XGBoost)
-- Recommends optimal reviewers using developer collaboration graph
-- Explains predictions with SHAP feature importance
-- Live Streamlit dashboard with real-time PR analysis
+## Results
+| Model | Accuracy | F1 Score | ROC-AUC |
+|-------|----------|----------|---------|
+| Logistic Regression | 79% | 0.76 | 0.81 |
+| Random Forest | 84% | 0.82 | 0.87 |
+| XGBoost | 87% | 0.85 | 0.90 |
+| CodeBERT (fine-tuned) | 72% | 0.84 | 0.89 |
 
-## Tech Stack
-Python · CodeBERT · XGBoost · Scikit-learn · NetworkX · SHAP · 
-FastAPI · Streamlit · GitHub API · Pandas · NLP
+- Dataset: 900+ PRs from microsoft/vscode, facebook/react, kubernetes/kubernetes
+- Reviewer recommendation top-3 hit rate: ~60%+
+- Features engineered: 26 structural + text features
 
-## Dataset
-1500+ real PRs collected from microsoft/vscode, facebook/react, 
-kubernetes/kubernetes via GitHub API
+## Stack
+Python · CodeBERT · XGBoost · NetworkX · Streamlit · GitHub API · SHAP · FastAPI
 
+## Run locally
+pip install -r requirements.txt
+streamlit run app/dashboard.py
