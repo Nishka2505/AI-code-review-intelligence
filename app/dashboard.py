@@ -17,10 +17,14 @@ st.set_page_config(
 
 @st.cache_resource
 def load_all():
-    xgb          = joblib.load('data/processed/xgboost_model.pkl')
-    scaler       = joblib.load('data/processed/scaler.pkl')
-    file_experts = joblib.load('data/processed/file_experts.pkl')
-    df           = pd.read_csv('data/processed/pr_cleaned.csv')
+    import os
+    
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    xgb          = joblib.load(os.path.join(base, 'data/processed/xgboost_model.pkl'))
+    scaler       = joblib.load(os.path.join(base, 'data/processed/scaler.pkl'))
+    file_experts = joblib.load(os.path.join(base, 'data/processed/file_experts.pkl'))
+    df           = pd.read_csv(os.path.join(base, 'data/processed/pr_cleaned.csv'))
     return xgb, scaler, file_experts, df
 
 xgb, scaler, file_experts, df = load_all()

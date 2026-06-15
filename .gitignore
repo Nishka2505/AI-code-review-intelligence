@@ -5,22 +5,17 @@
 # Python
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-.Python
-*.egg-info/
-dist/
-build/
 
 # Jupyter
 .ipynb_checkpoints/
-*.ipynb_checkpoints
 
-# Data (raw data too large for GitHub)
+# Raw data only (too large)
 data/raw/
-*.csv
-*.pkl
+
+# Large model files
 *.pt
+*.h5
+*.bin
 
 # VS Code
 .vscode/
@@ -28,7 +23,3 @@ data/raw/
 # OS
 .DS_Store
 Thumbs.db
-
-# Models (too large)
-*.h5
-*.bin
